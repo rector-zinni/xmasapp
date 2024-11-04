@@ -3,13 +3,36 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  RouterProvider,
+} from "react-router-dom";
+import { PortFolio } from './layouts/portfolio/Portfolio';
+import Cart from './layouts/cart/Cart';
+import { CartProvider } from './data/context/CartContext';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+
+
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <PortFolio/>,
+  },
+  {
+    path: "/cart",
+    element: <Cart/>,
+  },
+]);
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <CartProvider>
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
-);
+  </CartProvider>
+  );
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

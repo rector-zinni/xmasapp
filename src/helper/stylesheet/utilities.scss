@@ -1,0 +1,47 @@
+$phone:'450px';
+$tablet:'1050px';
+.btn{
+    border: none;
+    padding: .5em 1em;
+    border-radius: .5em;
+    
+}
+.btn-icon{
+    border: none;
+    padding: .5em 1em;
+    border-radius: 5em;
+    background-color: transparent;
+    aspect-ratio: 1/1;
+    font-size: 1.5em;
+    
+}
+
+.btn-icon:hover{
+    background-color: rgba(0,0,0,0.5);
+    cursor: pointer;
+}
+
+@mixin flex-position($j-content,$a-item,$gap,$f-dir){
+    display: flex;
+    justify-content: $j-content;
+    align-items: $a-item;
+    gap: $gap;
+    flex-direction: $f-dir;
+}
+
+
+.btn:hover{
+    cursor: pointer;
+}
+
+
+a{
+    color: black;
+}
+
+
+@mixin shadow( $x: 1px, $y: 1px, $blur: 7px, $spread: 0px, $color: rgba(0, 0, 0, 0.05)) {
+    -webkit-box-shadow: $x $y $blur $spread $color;
+    -moz-box-shadow: $x $y $blur $spread $color;
+    box-shadow:  $x $y $blur $spread $color;
+  }

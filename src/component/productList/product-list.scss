@@ -1,0 +1,281 @@
+@import '../../helper/stylesheet/utilities.scss';
+
+.product-list {
+    padding: 4em 2em;
+    @include flex-position(center, start, 1em, column);
+    overflow: hidden;
+
+}
+
+.product-list h3 {
+    font-size: 2em;
+}
+
+.unique-product-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 20%);
+
+    gap: 2.5em;
+}
+
+.unique-product {
+    @include flex-position(center, start, .5em, column);
+    border-radius: .5em;
+    @include shadow();
+
+
+}
+
+.unique-product img {
+    width: 100%;
+    max-height: 17em;
+    border-bottom: 1px solid rgb(0, 0, 0, .38);
+}
+
+.unique-product>span {
+    font-size: 1.7em;
+    padding: .5em;
+}
+
+
+.product-list-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 20%);
+    place-content: center;
+    place-items: start;
+    width: 100%;
+    ;
+    padding: 1em;
+    gap: 1.5em;
+}
+
+.loader {
+    height: 40em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-size: 1.5em
+}
+
+.product {
+    @include flex-position(center, center, .5em, column);
+    @include shadow(.2px, .2px, .3px, 0px, rgba(0, 0, 0, 0.38));
+    padding: 0 0 2.5em 0;
+    border-radius: .3em;
+    overflow: hidden;
+
+    p {
+        margin: 0;
+    }
+
+}
+
+.product>div:last-child {
+    @include flex-position(center, center, .5em, column);
+}
+
+.product .product-image {
+    width: 100%;
+    @include flex-position(center, center, 0, row);
+    background-color: #f6f6f6;
+    height: 25em;
+
+    >img {
+        width: 70%;
+        height: 20em;
+        cursor: pointer;
+
+    }
+
+}
+
+.supplier {
+    font-size: 1.7em;
+    color: rgb(20, 198, 198);
+}
+
+.product-name {
+    font-size: 1.5em;
+    text-align: center;
+    line-height: 1.5em;
+    /* Adjust as needed */
+    max-height: 3em;
+    /* Adjust based on line-height and desired number of lines */
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    /* Change this number for more or fewer lines */
+    text-overflow: ellipsis;
+    /* This will not have an effect for multiline */
+}
+
+
+.product-name:hover {
+    color: orange;
+}
+
+.product-price {
+    font-size: 3em
+}
+
+.product-price>p>sup {
+    font-size: .4em
+}
+
+.free-delivery {
+    @include flex-position(center, center, .5em, row);
+}
+
+.free-delivery>span {
+    font-size: 1.5em
+}
+
+.sales-count {
+    font-size: 1.5em;
+}
+
+.stars-parent {
+    @include flex-position(center, center, .2em, row);
+    list-style: none;
+    padding: 0;
+    font-size: 1.3em;
+    margin: 0;
+}
+
+.stars {
+
+    color: goldenrod;
+
+}
+
+.add-to-cart-btn {
+    background-color: gold;
+    padding: .5em 1.5em;
+    border: 0;
+    outline: 0;
+    font-size: 1.3em;
+    border-radius: 1em;
+    margin-top: 1em;
+    cursor: pointer;
+
+}
+
+.add-to-cart-btn:hover {
+    background-color: rgb(236, 201, 5);
+}
+
+.productp {
+    margin: 0;
+}
+
+.padded-document-section {
+    padding: 2em 6em;
+}
+
+@media (max-width:$phone) {
+    .product-list {
+        padding: 4em .5em;
+        @include flex-position(center, start, 1em, column);
+        overflow: hidden;
+    
+    }
+
+    .padded-document-section {
+        padding: .5em;
+    }
+
+    .unique-product-grid {
+        overflow: scroll;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 1em;
+        padding: .5em;
+    }
+
+    .unique-product img {
+        width: 100%;
+        max-height: 15em;
+        border-bottom: 1px solid rgb(0, 0, 0, .38);
+    }
+
+    .unique-product>span {
+        font-size: 1em;
+        padding: .5em;
+    }
+
+    .product-list h3 {
+        font-size: 1.5em;
+    }
+
+    .product-list-grid {
+        display: grid;
+        grid-template-columns: 100%;
+        place-items: start;
+        width: 100%;
+        ;
+        padding: .5em;
+        gap: 1.5em;
+    }
+
+    .product {
+        @include flex-position(center, center, .5em, row);
+
+
+        p {
+            margin: 0;
+        }
+
+    }
+
+    .product>div:last-child {
+        @include flex-position(start, start, .5em, column);
+        font-size: 1em;
+    }
+
+    .product-name {
+        font-size: 1.3em;
+        text-align: left;
+        line-height: 1.5em;
+        /* Adjust as needed */
+        max-height: 3em;
+        /* Adjust based on line-height and desired number of lines */
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        /* Change this number for more or fewer lines */
+        text-overflow: ellipsis;
+        /* This will not have an effect for multiline */
+    }
+
+    .add-to-cart-btn {
+        background-color: gold;
+        padding: .5em 1.5em;
+        border: 0;
+        outline: 0;
+        font-size: 1.3em;
+        border-radius: 1em;
+        margin-top: 1em;
+        cursor: pointer;
+        width: 100%;
+
+    }
+
+    .product .product-image {
+    
+        @include flex-position(center, center, 0, row);
+        background-color: #f6f6f6;
+        width: 20em;
+    
+        >img {
+            width: 100px;
+            height: 13em;
+            cursor: pointer;
+    
+        }
+    
+    }
+
+}

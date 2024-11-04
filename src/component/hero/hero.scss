@@ -1,0 +1,82 @@
+@import '../../helper/stylesheet/utilities.scss';
+
+
+.hero{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: .5em;
+    overflow: hidden;
+    padding: 1em;
+    
+}
+.hero>div{
+    @include flex-position(center,top,0,row)
+}
+.cta{
+    padding: 3em;
+    @include flex-position(center,top,1.5em,column)
+}
+.cta>h1{
+    font-size: 5.5em;
+    line-height: 1.5em;
+    margin: 0;
+ }
+.cta>p{
+   font-size: 2em;
+   line-height: 1.5em;
+   margin: 0;
+}
+
+.cta>button{
+    font-size: 2em;
+    line-height: 1.5em;
+    width: 40%;
+    background-color: brown;
+    color: white;
+ }
+.hero-image{
+    
+    img{
+        width: 100%;
+        min-height: 70vh;
+    }
+}
+
+
+@media (max-width:$phone) {
+    .hero{
+        padding: .5em
+
+    }
+    .cta{
+        padding: 1.5em;
+    }
+    .cta>button{
+        font-size: 1.7em;
+        line-height: 1.5em;
+        width: 50%;
+        background-color: brown;
+        color: white;
+     }
+
+     .cta>h1{
+        font-size: 5em;
+        line-height: 1em;
+        margin: 0;
+     }
+}
+
+@media (max-width:$tablet) {
+    .hero{
+        grid-template-columns: 1fr;
+        
+    }
+    .hero-image{
+        @include flex-position(center,center,0,row);
+        img{
+            width: 95%;
+            min-height: 50vh;
+        }
+    }
+    
+}

@@ -1,0 +1,114 @@
+@import '../../helper/stylesheet/utilities.scss';
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    font-size: 1.5em;
+    position: sticky;
+    top:0px;
+    background-color: white;
+}
+
+.nav-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .5em 0 .5em 2em;
+}
+
+nav {
+    @include flex-position(center, center, .5em, row)
+}
+
+nav button {
+    display: none;
+    background-color: transparent;
+    color: white;
+}
+
+.n-link {
+    margin-left: .5em;
+    text-decoration: none;
+    color: grey
+}
+
+.navbar ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0 2em 0 0;
+    gap: .5em;
+}
+
+.navbar ul li:first-child {
+    display: flex;
+    align-items: center;
+    gap:.3em;
+
+    >img {
+        max-width: 2.25em;
+
+    }
+}
+
+.bars {
+    display: none;
+}
+
+
+@media (max-width:$phone) {
+    .navbar {
+        overflow: hidden;
+        justify-content: space-between;
+    }
+
+    nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+
+        left: 0;
+        top: 0;
+        height: 100vh;
+        width: 100vw;
+        z-index: 2;
+        background-color: rgb(0, 0, 0, 0.9);
+    }
+
+    .navbar ul {
+       
+        padding: 0;
+        justify-content: right;
+        gap: 0em;
+        transform: translate(4em);
+        margin: 0;
+    }
+
+    nav button {
+        display: flex;
+        border: none;
+        position: absolute;
+        right: .3em;
+        top: .3em;
+        font-size: 1.5em;
+        cursor: pointer;
+
+    }
+
+    .nav-logo {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        padding: .5em 0 .5em 1em;
+    }
+
+    .bars {
+        @include flex-position(center, center, .5em, column);
+        padding-right: .5em;
+    }
+
+    .show-hide-nav {
+        display: flex;
+    }
+}
