@@ -2,7 +2,7 @@ import './hero.scss'
 import heroTree from '../../assets/image/shade-image.jpeg'
 import UseViewPort from '../../helper/js/customHook/UseViewPort';
 import { useState } from 'react';
-export const Hero = () => {
+export const Hero = ({brosweDeal}) => {
     const viewport=UseViewPort()
     const [heroImage,setHeroImage]=useState((viewport>450)?heroTree:'')
 
@@ -10,12 +10,17 @@ export const Hero = () => {
         <section className="hero">
        <div>
        <div className="cta">
-            <h1 className='roboto-bold'>Xmas is here again!</h1>
+            <h1 className='roboto-bold'>🎉 Holiday Sale - Up to 50% OFF on All Items!"</h1>
             <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa quas vitae est ipsa neque facilis labore vero praesentium sunt, accusamus ab saepe nostrum, facere ex qui tempora fuga laudantium officiis?
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa quas vitae est ipsa neque facilis labore vero praesentium sunt, accusamus ab saepe nostrum, facere ex qui tempora fuga laudantium officiis?
+            Your one-stop shop for perfect gifts and festive deals. Limited time only!
+            <br />
+            Free shipping on all orders this holiday season! 🎁
+            <br />
+            Exclusive holiday discounts across all categories – Limited time only!
             </p>
-            <button className="btn roboto-bold"> Call to Action </button>
+            <button
+            onClick={brosweDeal}
+            className="btn roboto-bold"> Browser Holiday deal </button>
         </div>
 
        </div>

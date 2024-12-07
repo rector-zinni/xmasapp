@@ -11,6 +11,8 @@ import {
 import { PortFolio } from './layouts/portfolio/Portfolio';
 import Cart from './layouts/cart/Cart';
 import { CartProvider } from './data/context/CartContext';
+import GiftCard from '../src/component/GiftCard/GiftCard'
+import RedeemCard from './component/RedeemGiftCard/RedeemCard';
 
 
 
@@ -23,6 +25,14 @@ const router = createBrowserRouter([
   {
     path: "/cart",
     element: <Cart/>,
+  },
+  {
+    path: "/checkout",
+    element: <GiftCard/>,
+  },
+  {
+    path: "/redeem",
+    element: <RedeemCard/>,
   },
 ]);
 

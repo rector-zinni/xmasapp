@@ -1,129 +1,173 @@
 @import '../../helper/stylesheet/utilities.scss';
 
-.cart{
-   
-    background-color: #f6f6f6;
-    min-height: 100vh
-}
-.cart >p{
-margin: 0;
-padding: 1em;
-font-size: 1.5em;
-width:80%;
-margin-bottom: 20em;
-}
+.cart {
 
-.empty-cart{
-    @include flex-position(start,start,.3em,row);
-    background-color: white;
-    padding: 3em;
-    width: 80%;
+  background-color: #f6f6f6;
+  min-height: 100vh;
 }
-.teal{
-    color: rgb(81, 200, 200);
+.cart>.cart-wrp{
+  padding: 1em;
+  @include flex-position(start,start,0em,column)
 }
-.flex-group{
-    @include flex-position(start,center,1em,row);
-    
-}
-.empty-cart>img{
-    width:50em
-}
-.empty-cart>div>p{
-    font-size: 2.5em;
-    margin:0; 
-    
-}
-.empty-cart-link{
-    font-size: 1.5em;
-}
-.empty-cart>div{
-    @include flex-position(start,start,1em,column);
-}
-.flex-group > button{
-    padding: .5em 1.5em;
-    border-radius:2em;
-    outline: 0;
-    cursor: pointer;
-    font-size: 1.5em;
+.cart>p {
+  margin: 0;
+  padding: .5em;
+  font-size: 1em;
+  width: 75%;
+  text-align: left;
 }
 
-.flex-group > button:first-child{
-   background-color: yellow;
-   border: 0;
+.e-cart {
+  @include flex-position(center, start, .5em, row);
+  padding: 1em;
 }
 
-.flex-group > button:last-child{
-    background-color: white;
-    border: 1px solid black;
- }
+.empty-cart {
+  @include flex-position(start, start, .3em, row);
+  background-color: white;
+  padding: 3em;
+  width: 80%;
 
- .flex-group > button:first-child:hover{
-    background-color: rgb(227, 227, 3);
- }
- 
- .flex-group > button:last-child:hover{
-     background-color: rgb(239, 239, 239);
-     border: 1px solid black;
-  }
+}
+
+.teal {
+  color: rgb(81, 200, 200);
+}
+
+.flex-group {
+  @include flex-position(start, center, 1em, row);
+
+}
+
+.empty-cart>img {
+  width: 50%;
+}
+
+.empty-cart>div>p {
+  font-size: 2.5em;
+  margin: 0;
+
+}
+
+.empty-cart-link {
+  font-size: 1.5em;
+}
+
+.empty-cart>div {
+  @include flex-position(start, start, 1em, column);
+}
+
+.flex-group>button {
+  padding: .5em 1.5em;
+  border-radius: 2em;
+  outline: 0;
+  cursor: pointer;
+  font-size: 1.5em;
+}
+
+.flex-group>button:first-child {
+  background-color: yellow;
+  border: 0;
+}
+
+.flex-group>button:last-child {
+  background-color: white;
+  border: 1px solid black;
+}
+
+.flex-group>button:first-child:hover {
+  background-color: rgb(227, 227, 3);
+}
+
+.flex-group>button:last-child:hover {
+  background-color: rgb(239, 239, 239);
+  border: 1px solid black;
+}
 
 
-  //style for carted=product component
+//style for carted=product component
 
-  .carted-product{
-    padding: 2em;
-    @include flex-position(center,center,1em,row)
-  }
-  .cart-item-added{
-    background-color: white;
-    width: 70%;
-    min-height: 20em;
-    padding: 1em;
-  }
-  .cart-item{
-    @include flex-position(center,center,.5em,row)
-  }
-  .cart-item>div{
-    @include flex-position(center,center,.5em,column)
-  }
-  .cart-item>img{
-    width: 20em;
-    height: 20em;
-  }
-  .cart-item>div>p{
-    margin: 0;
+.carted-product {
+  padding: 2em;
+  @include flex-position(center, top, 1em, row)
+}
 
-  }
-  .cart-item>div>p:first-child{
-    @include flex-position(start,center,.5em,row);
-    font-size: 2em;
+.cart-item-added {
+  background-color: white;
+  width: 70%;
+  min-height: 20em;
+  padding: 1em;
+}
+
+.cart-title {
+  font-size: 2em;
+}
+
+.cart-item {
+  @include flex-position(start, top, 1em, row)
+}
+
+.cart-item>div:last-child {
+  @include flex-position(space-between, center, 2em, row);
+  width: 100%;
 
 
-  }
-  .cart-item>div>p:last-child{
-    @include flex-position(start,center,.5em,row);
-    font-size: 1.5em;
+}
+
+.cart-item>div:last-child>div {
+  @include flex-position(start, top, .5em, column)
+}
+
+.cart-item>div:first-child>img {
+  width: 100px;
+  height: 100px;
+}
 
 
-  }
-  .cart-icon-check{
-    
-    color: rgb(9, 73, 9);
-  }
+.cart-item>div>div>p {
+  margin: 0;
 
-  .cart-count{
-    @include flex-position(center,center,1em,column);
-    background-color: white;
-    width: 25%;
-    padding: 1em;
-    min-height: 20em;
-  }
-  .cart-subtotal{
-    @include flex-position(start,center,.5em,row);
-    font-size: 2em;
-    width: 95%;
+}
 
-  }
+
+.cart-item>div>div>p:first-child {
+  @include flex-position(start, center, .5em, row);
+  font-size: 1.5em;
+
+
+}
+
+.cart-item>div>div>p:nth-child(2) {
+  @include flex-position(start, center, .5em, row);
+  font-size: 1.5em;
+
+
+}
+
+.cart-icon-check {
+
+  color: rgb(35, 151, 197);
+}
+
+.cart-count {
+  @include flex-position(center, center, 1em, column);
+  background-color: white;
+  width: 25%;
+  padding: 1em;
+  height: 20em;
+}
+
+.cart-count>p:last-child {
+  font-size: .1em;
+}
+
+.cart-subtotal {
+  @include flex-position(start, center, .5em, row);
+  font-size: 2em;
+  width: 95%;
+
+}
+
 //   .cart-subtotal span:first-child{
 //    font-size: 1.7em;
 //   }
@@ -133,11 +177,12 @@ margin-bottom: 20em;
 //  font-size: 1.5em;
 // }
 
-.cart-count-btn{
-  @include flex-position(center,center,.5em,column);
+.cart-count-btn {
+  @include flex-position(center, center, .5em, column);
   width: 100%;
-} 
-.cart-count-btn>button{
+}
+
+.cart-count-btn>button {
   padding: .5em 1em;
   outline: 0;
   border: 0;
@@ -145,16 +190,172 @@ margin-bottom: 20em;
   width: 100%;
   cursor: pointer;
 }
-.cart-count-btn>button:last-child{
-    background-color: yellow;
+
+.cart-count-btn>button:last-child {
+  background-color: yellow;
 
 }
-.cart-count-btn>button:first-child{
+
+.cart-count-btn>button:first-child {
 
   background-color: white;
-  border:  1px solid black;
+  border: 1px solid black;
 }
 
-.cart-count>p{
+.cart-count>p {
   font-size: 1.5em;
+}
+
+.cart-product-name {
+  font-size: 1em;
+  text-align: left;
+  line-height: 1.5em;
+  /* Adjust as needed */
+  max-height: 3em;
+  /* Adjust based on line-height and desired number of lines */
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  /* Change this number for more or fewer lines */
+  text-overflow: ellipsis;
+}
+
+.close-icon {
+  color: red;
+  font-size: 1.5em;
+  @include flex-position(center, center, 0, row);
+}
+
+.close-icon:hover {
+
+  color: rgb(240, 112, 112);
+  cursor: pointer;
+
+}
+
+.checkout-button-wrapper {
+
+    width: 70%;
+  @include flex-position(start, center, .5em, row);
+
+  button {
+    padding: .5em;
+    font-size: 1.5em;
+    outline: 0;
+    border-radius: 2em;
+    width: 12em;
+    background-color: white;
+    border: 1px solid black;
+
+  }
+
+  button:hover {
+    cursor: pointer;
+  }
+
+  button:last-child {
+    background-color: yellow;
+    border: 0;
+  }
+}
+
+.free-return{
+  
+  border: 1px solid rgb(241, 195, 111);
+  background-color: rgb(244, 233, 211);
+  padding:.5em;
+  width: 75%;
+  @include flex-position(start,center,.5em,row);
+  p{
+    font-size: 2em;
+    margin: 0;
+  }
+  span{
+    font-size: 1.3em;
+    margin: 0;
+    align-self: center;
+  }
+}
+
+
+// media query for phone
+
+@media (max-width:$tablet) {
+  .checkout-button-wrapper {
+    display: none;
+  }
+
+}
+
+
+// media query for phone
+
+@media (max-width:$tablet) {
+
+
+  .cart>p {
+    width: 100%;
+    text-align: center;
+  }
+
+  .e-cart {
+    @include flex-position(center, center, .5em, column);
+    padding: .5em;
+  }
+
+  .empty-cart {
+    @include flex-position(center, center, .3em, column);
+    background-color: white;
+    padding: 3em;
+    width: 100%;
+
+  }
+
+
+  .carted-product {
+    padding: 2em;
+    @include flex-position(center, center, 1em, column)
+  }
+
+  .cart-item-added {
+    background-color: white;
+    width: 100%;
+    min-height: 20em;
+    padding: 1em;
+  }
+
+  .cart-item {
+  padding:.5em
+  }
+
+  .cart-item:hover {
+    background-color: #f6f6f6;
+    cursor:pointer;
+  }
+
+  .cart-count {
+    @include flex-position(center, center, 1em, column);
+    background-color: white;
+    width: 100%;
+    padding: 1.5em;
+    height: 15em;
+  }
+
+  .checkout-button-wrapper {
+    display: none;
+  }
+
+  .free-return{
+    width: 98%;
+    margin: 0;
+    @include flex-position(center, center, 1em, column);
+   p{
+    font-size: 1.5em;
+   }
+   span{
+    font-size: 1em;
+   }
+  }
+
 }

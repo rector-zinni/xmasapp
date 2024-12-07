@@ -1,3 +1,5 @@
+@import '../../helper/stylesheet/utilities.scss';
+
 .portfolio{
     
 }
@@ -5,4 +7,63 @@
 .footer img{
     width: 100%;
     cursor: pointer;
+}
+
+.padded-document-section{
+    
+    overflow: hidden;
+    padding: 1em;
+    
+    >video{
+        width: 98%;
+        height: auto;
+        margin: 0 auto;
+        text-align: center;
+       
+    }
+    >video:hover {
+        transform: scale(1.05);  /* Slight zoom on hover */
+        transition: transform 0.3s ease;  /* Smooth transition */
+    }
+    
+
+}
+
+/* App.css */
+/* App.css */
+.carousel img {
+    width: 100%;
+    height: auto;
+    display: block;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+  
+  /* When the image is visible, set opacity to 1 */
+  .carousel img.visible {
+    opacity: 1;
+  }
+  
+  
+
+@media (max-width:$phone) {
+
+
+
+    .carousel img {
+        width: 100%;
+        height:200px;
+        display: block;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+      }
+    .padded-document-section{
+    
+        overflow: hidden;
+        padding: 1em;
+        video{
+            width: 98%;
+            height: auto;
+        }
+    }
 }

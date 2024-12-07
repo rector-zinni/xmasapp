@@ -1,0 +1,12 @@
+@import '../../helper/stylesheet/utilities.scss';
+
+.verified-shop{
+   @include flex-position(start,start,.5em,column);
+   padding: .5em;
+
+}
+
+.verified-wrp{
+    @include flex-position(start,start,.5em,column);
+   
+}

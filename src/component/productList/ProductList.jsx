@@ -7,14 +7,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import '../productList/product-list.scss'
 import { faCheckCircle, faCheckSquare, faSpinner, faStar } from '@fortawesome/free-solid-svg-icons'
 import { useCart } from '../../data/context/CartContext'
+import { useState,useRef } from 'react'
 
 
-const ProductLIst = ({ unique_data, product_data }) => {
+const ProductLIst = ({ unique_data, product_data,myRef }) => {
     
   
        
     return (
-        <div className="product-list">
+        <div className="product-list" ref={myRef}>
              <h3>Shop unique Handmade items</h3>
             <div className="unique-product-grid">
                
@@ -33,7 +34,7 @@ const ProductLIst = ({ unique_data, product_data }) => {
 
 
 const Product = ({ product,name, price, image, href,supplier}) => {
-    const {state,dispatch}=useCart()
+    const {dispatch}=useCart()
 
     const randomSales=()=>{
         const random_number=Math.floor(Math.random()*(1000-200+1))+200
@@ -63,8 +64,9 @@ const Product = ({ product,name, price, image, href,supplier}) => {
             totalAmount:0
         }
         dispatch({type:'ADD_ITEM',payload:cart_data})
-        console.log(state)
+
     }
+    const [sales,setSales] =useState(randomSales())
     return (
         <div className="product">
            <div className="product-image">
@@ -74,7 +76,7 @@ const Product = ({ product,name, price, image, href,supplier}) => {
           <p className="supplier roboto-bold">{supplier}</p>
            <p className="product-name roboto-medium" >{name}</p>
            <Stars num={5} starIcon={faStar} color='goldenrod'/>
-           <span className='sales-count'>+{randomSales()} sold in past month</span>
+           <span className='sales-count'>+{sales} sold in past month</span>
             <div className="product-price roboto-normal">
               <p>
                 <sup>$</sup>
@@ -94,7 +96,7 @@ const Product = ({ product,name, price, image, href,supplier}) => {
 
             </div>
             <span>of items shipped by <b>Amazon</b></span>
-            <button className='add-to-cart-btn roboto-regular ' onClick={addCart}>Add to cart</button>
+            <button className='add-to-cart-btn roboto-regular' onClick={()=>{addCart()}}>Add to cart</button>
           </div>
         </div>
     );
